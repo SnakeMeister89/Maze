@@ -4,27 +4,26 @@ import mod.Maze;
 import mod.Minotaur;
 import mod.Player;
 
-public class StringMap {
+public class StringMap { // this method turns all the information on the other class into a string so that it can be seen
 
 
-	private final String _wall = "o";
-	private final String _path = "x";
-	private final String _ply = "P";
-	private final String _min = "M";
-	private final String _exit = "E";
-	private final String _space = "     ";
-	// private final String _sword = "S";
-	private Maze _maze;
-	private Player _plyr;
-	private Minotaur _mint;
+	private final String _wall = "o"; // sets a wall to look like something
+	private final String _path = "x";// sets a path to look like something
+	private final String _ply = "P";// sets the player to look like something
+	private final String _min = "M";// sets the minotaur to look like something
+	private final String _exit = "E";// sets the exit to look like something
+	private final String _space = "     ";// sets a space to look like something
+	private Maze _maze; //initalizes the maze
+	private Player _plyr;//initalizes the player
+	private Minotaur _mint;//initalizes the minotaur
 	
-	public StringMap(Maze m, Player p, Minotaur t) {
+	public StringMap(Maze m, Player p, Minotaur t) { // String Map constructor that declears all the information
 		_maze = m;
 		_plyr = p;
 		_mint = t;
 	}
 	
-	public String generateMap() {
+	public String generateMap() { // this method generates the maze and sets it equal to a string
 		 String map = "";
 		 for(int r = 0; r < _maze.getMaze().length; r++) {
 			 for(int c = 0; c < _maze.getMaze()[0].length; c++) {
