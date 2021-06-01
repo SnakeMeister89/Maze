@@ -3,15 +3,15 @@ package mod;
 import cont.JOP;
 import view.StringMap;
 
-public class World {
+public class World { // this is the world class that makes the game and puts it togather.
 
-	private Player _p;
-	private Minotaur _t;
-	private Maze _m;
-	private StringMap _s;
+	private Player _p; // intiallizes the player
+	private Minotaur _t; // intiallizes the minotaur
+	private Maze _m; // intiallizes the maze
+	private StringMap _s; // intiallizes the stringmap
 
-	public World() {
-		_m = new Maze();
+	public World() {// this constructor declares everything and creats the world object
+		_m = new Maze(); 
 		// startROW startCOL
 		_p = new Player(_m.getPlyStart()[0], _m.getPlyStart()[1]);
 		_t = new Minotaur(_m.getMinStart()[0], _m.getMinStart()[1]);
@@ -20,7 +20,7 @@ public class World {
 		update();
 	}
 
-	public void update() {
+	public void update() { // this method is basically the whole game that puts all the methods together, checks for victory and defeat and the end
 		boolean isPlaying = true;
 		while (isPlaying) {
 			boolean on = true;
@@ -59,7 +59,7 @@ public class World {
 		
 	}
 
-	// change to getPlayerMove(String s) change to private.
+	// This method gets the playersmove and returns a boolean if he can move there or not.
 	private boolean getPlayerMove(String s) {
 
 		// Moving North
@@ -102,7 +102,7 @@ public class World {
 		return false;
 	}
 	
-	private void moveMinotaur() {
+	private void moveMinotaur() { //this method finds the best move for the minotaur and moves him
 		int rDist = _p.getRow() - _t.getRow();
 		int cDist = _p.getCol() - _t.getCol();
 		int r = _t.getRow();
@@ -127,7 +127,7 @@ public class World {
 		}
 	}
 	
-	public boolean death() {
+	public boolean death() { // this method checks to see if the player is dead 
 		if(_t.getRow() == _p.getRow() &&
 				_t.getCol() == _p.getCol()) {
 			return true;
@@ -135,7 +135,7 @@ public class World {
 		return false;
 	}
 
-	public boolean victory() {
+	public boolean victory() { // this method checks to see if the player is on the exit and won.
 		if (_p.getRow() == _m.getExit()[0] && _p.getCol() == _m.getExit()[1])
 			return true;
 		return false;
