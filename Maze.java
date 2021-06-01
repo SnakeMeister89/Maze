@@ -1,6 +1,6 @@
 package mod;
 
-public class Maze {
+public class Maze { //this is the maze method which has all the information about the maze like the start and end location and the walls and paths
 
 	private boolean [][] _curMaze =
 		{
@@ -16,24 +16,17 @@ public class Maze {
 		{false,		false, 	false, 	false, 	false, 	false, 	false, 	false, 	false, 	false}
 		};
 	
-	// private boolean[][][] _mazeList;
-	// private int[][] _plyStartLocations;
-	// private int[][] _minStartLocations;
-	// private int[][] _exit;
-	// private int[][] _sword;
-	
-	// currentLocations
-	private int[] _plyStartLocations = {0,2};
-	private int[] _minStartLocations = {5,9};
-	private int[] _exit = {5,0};
-	//private int[] _sword;
 	
 	
-	public boolean[][] getMaze() { return _curMaze; }
-	public int[] getPlyStart() { return _plyStartLocations; }
-	public int[] getMinStart() { return _minStartLocations; }
-	public int[] getExit() { return _exit; }
-	// public int[] getSword();
+	private int[] _plyStartLocations = {0,2};// this is the start locations in a maze that are stored in an array
+	private int[] _minStartLocations = {5,9};// this is the start locations for the minotaur and it is stored in an array
+	private int[] _exit = {5,0};// this is the end location in a maze that are stored in an array
 	
-	//public void setCurMaze(int mazeNum) { }
+	
+	
+	public boolean[][] getMaze() { return _curMaze; }// getter method that returns the maze
+	public int[] getPlyStart() { return _plyStartLocations; }//getter method that returns the start locations
+	public int[] getMinStart() { return _minStartLocations; }//getter method that returns the minotaurs start locations
+	public int[] getExit() { return _exit; } //getter method that returns the exit location
+	
 }
